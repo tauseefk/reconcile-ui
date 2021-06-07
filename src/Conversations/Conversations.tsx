@@ -21,13 +21,12 @@ export const Conversations = () => {
   };
 
   const handleToggleExpand = (id: string) => {
-    console.log(id)
     if (expanded === id) {
       setExpanded(null);
     } else {
       setExpanded(id);
     }
-  }
+  };
 
   const deleteConversationFromState = (id: string) => {
     setConversationsData(
@@ -69,6 +68,14 @@ export const Conversations = () => {
   return (
     <div className="conversations">
       {conversations.length ? conversations : <EmptyLabel />}
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://reconcile-text.herokuapp.com"
+        className="live-view"
+      >
+        Live View ⚡️
+      </a>
     </div>
   );
 };
@@ -108,7 +115,6 @@ const ConversationItem = ({
 }: IConversationProps) => {
   return (
     <div
-      onClick={() => toggleExpand(id)}
       className={
         isExpanded ? "conversation-item expanded" : "conversation-item"
       }
@@ -117,7 +123,10 @@ const ConversationItem = ({
         onClick={() => toggleFavorite(id)}
         className={isFavorite ? "fav isFavorite" : "fav"}
       ></div>
-      <div className="conversation-item-content">
+      <div
+        onClick={() => toggleExpand(id)}
+        className="conversation-item-content"
+      >
         <div>{id}: </div>
         <div className="font-small">{text}</div>
         <div className="font-small mutation">{JSON.stringify(mutation)}</div>
