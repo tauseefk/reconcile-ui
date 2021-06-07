@@ -4,7 +4,7 @@ window.PRODUCTION =
 
 export function getRootUrl() {
   return window.PRODUCTION
-    ? "https://reconcile-txt.herokuapp.com"
+    ? "https://reconcile-text.herokuapp.com"
     : "http://localhost:3000";
 }
 
