@@ -1,6 +1,6 @@
 import axios from "axios";
 window.PRODUCTION =
-  window.location.host === "https://reconcile-ui.herokuapp.com";
+  window.location.host === "reconcile-ui.herokuapp.com";
 
 export function getRootUrl() {
   return window.PRODUCTION
