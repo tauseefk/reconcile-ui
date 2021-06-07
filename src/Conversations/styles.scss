@@ -1,0 +1,145 @@
+@keyframes scale-fade {
+  0% {
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  50% {
+    filter: alpha(opacity=100);
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+
+  70% {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scale-fade {
+  0% {
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  50% {
+    filter: alpha(opacity=100);
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+
+  70% {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.conversations {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  height: 60%;
+  justify-content: center;
+}
+
+.conversation-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  max-width: 400px;
+  margin-bottom: 20px;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  
+  .conversation-item-content {
+    height: 80%;
+    max-width: 80%;
+  }
+
+  > .empty {
+    margin: 0 auto;
+  }
+
+  .mutation {
+    opacity: 0;
+    margin-top: 4px;
+  }
+  
+  &.expanded {
+    height: 100px;
+    
+    .mutation {
+      -webkit-animation: scale-fade 250ms;
+      animation: scale-fade 250ms;
+      opacity: 1;
+    }
+  }
+}
+
+.fav {
+  margin-top: 2px;
+  width: 16px;
+  height: 20px;
+  background-image: url("./star.svg");
+
+  &.isFavorite {
+    background-image: url("./star_filled.svg");
+  }
+}
+
+.delete {
+  padding: 4px;
+}
+
+.font-small {
+  font-size: 10px;
+}
